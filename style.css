@@ -1,4 +1,26 @@
+.hero {
+  text-align: center;
+  margin-bottom: 2rem;
+}
 
+.hero-image {
+  width: 100%;
+  max-height: 450px;
+  object-fit: cover;
+  border-radius: 20px;
+  margin-bottom: 1rem;
+}
+
+.hero-content h1 {
+  font-size: 2.5rem;
+  color: #d61c1c;
+}
+
+.tagline {
+  color: #555;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
 /* Unlac Health - style.css */
 :root{
   --accent: #ffb3b6; /* light apple-pink */
