@@ -1,0 +1,44 @@
+
+/* Unlac Health - style.css */
+:root{
+  --accent: #ffb3b6; /* light apple-pink */
+  --accent-600: #ff7f87;
+  --text: #222;
+  --muted: #666;
+  --radius: 10px;
+  --max-width: 1000px;
+  --gap: 1.25rem;
+  font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+}
+*{box-sizing:border-box}
+body{margin:0;color:var(--text);background:#ffffff;line-height:1.6;font-size:16px}
+.wrap{max-width:var(--max-width);margin:0 auto;padding:2rem}
+.site-header{border-bottom:1px solid #f2f2f2;position:sticky;top:0;background:#fff;z-index:1000}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:1rem 0}
+.brand{display:flex;align-items:center;gap:1rem}
+.logo-img{width:56px;height:56px;border-radius:12px;object-fit:cover;background:var(--accent)}
+.brand-text h1{margin:0;font-size:1.25rem;color:var(--accent-600);letter-spacing:0.2px}
+.tagline{margin:0;color:var(--muted);font-size:0.95rem}
+
+.main-nav a{margin-left:1rem;text-decoration:none;color:var(--text);font-weight:600}
+.hero{text-align:center;padding:4rem 1rem;background:linear-gradient(180deg,var(--accent),#fff);border-radius:12px;margin-top:1rem}
+.hero h2{font-size:2rem;margin-bottom:0.5rem;color:var(--text)}
+.hero p{color:var(--muted);margin-bottom:1rem}
+.btn{display:inline-block;background:var(--accent-600);color:white;padding:0.7rem 1.2rem;border-radius:999px;text-decoration:none;font-weight:600;border:none;cursor:pointer}
+
+section{padding:3rem 0}
+h2{text-align:center;margin-bottom:1.25rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:var(--gap)}
+.card{background:#fff;border-radius:12px;padding:1.25rem;box-shadow:0 6px 18px rgba(15,15,15,0.04);text-align:center}
+.post{background:#fff;border-radius:12px;padding:1.25rem;margin-bottom:1rem;box-shadow:0 6px 18px rgba(15,15,15,0.03)}
+
+#contact-form{max-width:600px;margin:0 auto;display:flex;flex-direction:column;gap:0.75rem}
+input,textarea{padding:0.8rem;border:1px solid #ececec;border-radius:8px;font-size:0.95rem}
+.site-footer{border-top:1px solid #f2f2f2;margin-top:2rem;background:#fff;padding:1.25rem 0}
+.footer-inner{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap}
+.social a{margin-left:0.75rem;text-decoration:none;color:var(--muted);font-weight:600}
+@media(max-width:700px){
+  .header-inner{flex-direction:column;align-items:flex-start;gap:0.75rem}
+  .main-nav{order:2}
+  .hero{padding:2rem}
+}
