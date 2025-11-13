@@ -12,16 +12,27 @@ body {
 }
 
 /* HEADER */
-<header class="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-content">
-    <img src="logo.png" alt="Unlac Health Logo" class="logo">
-    <h1>Unlac Health</h1>
-    <p class="tagline">Your Path to Healthier Living</p>
-    <a href="#contact" class="btn">Get in Touch</a>
-  </div>
-</header>
+.hero {
+  text-align: center;
+  padding: 3rem 1rem;
+  background: #fff;
+}
 
+.logo {
+  width: 100px;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  color: #d61c1c;
+  font-size: 2.2rem;
+}
+
+.tagline {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 1rem;
+}
 
 .btn {
   display: inline-block;
