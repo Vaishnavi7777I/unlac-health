@@ -181,6 +181,76 @@ button.btn {
   background: #b81f1f;
 }
 
+/* ============================
+   WRITE A REVIEW FORM (⭐)
+   ============================ */
+
+.review-form {
+  max-width: 500px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.review-form input,
+.review-form textarea {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #ffdcdc;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+}
+
+.review-form input:focus,
+.review-form textarea:focus {
+  border-color: #d62828;
+}
+
+.submit-review-btn {
+  background: #d62828;
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.submit-review-btn:hover {
+  background: #b81f1f;
+}
+
+/* ⭐ STAR RATING ⭐ */
+.star-rating {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  margin-bottom: 10px;
+}
+
+.star-rating input {
+  display: none;
+}
+
+.star-rating label {
+  font-size: 28px;
+  color: #ccc;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.star-rating input:checked ~ label {
+  color: #ffcc00;
+}
+
+.star-rating label:hover,
+.star-rating label:hover ~ label {
+  color: #ffdf70;
+}
+
 /* FOOTER */
 footer {
   text-align: center;
