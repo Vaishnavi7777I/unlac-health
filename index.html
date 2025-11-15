@@ -88,6 +88,35 @@
   </div>
 </section>
 
+  <section id="write-review" style="padding:60px 20px; text-align:center;">
+  <h2 style="color:#d62828; margin-bottom:20px;">Write a Review</h2>
+
+  <form action="https://formspree.io/f/xwpapnev" method="POST" class="review-form">
+
+    <div class="star-rating">
+      <input type="radio" name="rating" id="5-stars" value="5" />
+      <label for="5-stars" class="star">&#9733;</label>
+
+      <input type="radio" name="rating" id="4-stars" value="4" />
+      <label for="4-stars" class="star">&#9733;</label>
+
+      <input type="radio" name="rating" id="3-stars" value="3" />
+      <label for="3-stars" class="star">&#9733;</label>
+
+      <input type="radio" name="rating" id="2-stars" value="2" />
+      <label for="2-stars" class="star">&#9733;</label>
+
+      <input type="radio" name="rating" id="1-star" value="1" />
+      <label for="1-star" class="star">&#9733;</label>
+    </div>
+
+    <input type="text" name="name" placeholder="Your Name" required>
+    <textarea name="review" placeholder="Write your review..." required></textarea>
+
+    <button type="submit" class="submit-review-btn">Submit Review</button>
+  </form>
+</section>
+
   <!-- FOOTER -->
   <footer>
     <p>© 2025 Unlac Health | All Rights Reserved</p>
