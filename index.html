@@ -1,153 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Unlac Health | Nutrition & Wellness</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unlac Health</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-  <!-- HEADER -->
-  <header class="hero">
-    <img src="logo.png" alt="Unlac Health Logo" class="logo">
-    <h1>Unlac Health</h1>
-    <p class="tagline">Your Path to Healthier Living</p>
-    <a href="#contact" class="btn">Get in Touch</a>
-  </header>
+    <!-- HEADER -->
+    <header>
+        <h1>Unlac Health</h1>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#reviews">Reviews</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
 
-  <!-- ABOUT -->
-  <section id="about" class="section about">
-    <h2>About Unlac Health</h2>
-    <p><strong>Unlac Health</strong> is committed to making nutrition simple, evidence-based, and accessible. 
-    We empower individuals to make informed food choices, build healthy habits, and achieve lasting wellness — 
-    without restrictive diets or confusion.</p>
-    <p>Our goal is to guide you toward sustainable lifestyle changes that fit your daily life.</p>
-  </section>
+    <!-- HOME -->
+    <section id="home" class="home">
+        <h2>Welcome to Unlac Health</h2>
+        <p>Your journey to a healthy, happy and sustainable lifestyle begins here.</p>
+    </section>
 
-  <!-- SERVICES -->
-  <section id="services" class="section services">
-    <h2>Our Services</h2>
-    <div class="service-list">
-      <div class="service">
-        <h3>Personalized Nutrition Plans</h3>
-        <p>Custom diet programs tailored to your goals, preferences, and health needs.</p>
-      </div>
-      <div class="service">
-        <h3>Nutrition Counseling</h3>
-        <p>1-on-1 sessions to help you understand your body and improve your eating habits.</p>
-      </div>
-      <div class="service">
-        <h3>Healthy Lifestyle Coaching</h3>
-        <p>Holistic support focusing on diet, activity, and mindfulness for balanced living.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- BLOG -->
-  <section id="blog" class="section blog">
-    <h2>From Our Blog</h2>
-    <div class="blog-list">
-      <div class="blog-post">
-        <h3>5 Simple Tips for Healthy Eating</h3>
-        <p>Learn how small, consistent habits can transform your meals and energy...</p>
-        <a href="#" class="btn-small">Coming Soon</a>
-      </div>
-      <div class="blog-post">
-        <h3>Understanding Gut Health</h3>
-        <p>Your gut affects everything — from digestion to mood. Discover how to care for it...</p>
-        <a href="#" class="btn-small">Coming Soon</a>
-      </div>
-    </div>
-  </section>
-
-  <section id="reviews" class="reviews-section">
-    <h2>Client Reviews ⭐</h2>
-
-    <!-- Review List -->
-    <div id="review-list" class="review-list"></div>
-
-    <h3>Write a Review</h3>
-
-    <form id="reviewForm">
-        <input type="text" id="reviewerName" placeholder="Your Name" required>
-
-        <!-- Star Rating -->
-        <div class="stars" id="starRating">
-            ★★★★★
-        </div>
-
-        <textarea id="reviewText" placeholder="Your Review" required></textarea>
-
-        <button type="submit">Submit Review</button>
-    </form>
-</section>
-
-  <!-- CONTACT -->
-  <section id="contact" class="section contact">
-    <h2>Contact Us</h2>
-    <form action="https://formspree.io/f/xwpapnev" method="POST">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
-      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-      <button type="submit" class="btn">Send Message</button>
-    </form>
-    <p class="contact-email">📧 contactunlac.health@gmail.com</p>
-  </section>
-
-  <section id="reviews">
-  <h2>What People Say</h2>
-
-  <div class="review-container">
-    <button class="arrow left" onclick="prevReview()">&#10094;</button>
-
-    <div class="review-box">
-      <p class="review-text">"Unlac Health completely changed my diet. I feel lighter and more energetic!"</p>
-      <h4 class="review-author">— Priya</h4>
-    </div>
-
-    <button class="arrow right" onclick="nextReview()">&#10095;</button>
-  </div>
-</section>
-
-  <section id="write-review" style="padding:60px 20px; text-align:center;">
-  <h2 style="color:#d62828; margin-bottom:20px;">Write a Review</h2>
-
-  <form action="https://formspree.io/f/xwpapnev" method="POST" class="review-form">
-
-    <div class="star-rating">
-      <input type="radio" name="rating" id="5-stars" value="5" />
-      <label for="5-stars" class="star">&#9733;</label>
-
-      <input type="radio" name="rating" id="4-stars" value="4" />
-      <label for="4-stars" class="star">&#9733;</label>
-
-      <input type="radio" name="rating" id="3-stars" value="3" />
-      <label for="3-stars" class="star">&#9733;</label>
-
-      <input type="radio" name="rating" id="2-stars" value="2" />
-      <label for="2-stars" class="star">&#9733;</label>
-
-      <input type="radio" name="rating" id="1-star" value="1" />
-      <label for="1-star" class="star">&#9733;</label>
-    </div>
-
-    <input type="text" name="name" placeholder="Your Name" required>
-    <textarea name="review" placeholder="Write your review..." required></textarea>
-
-    <button type="submit" class="submit-review-btn">Submit Review</button>
-  </form>
-</section>
-
-  <!-- FOOTER -->
-  <footer>
-    <p>© 2025 Unlac Health | All Rights Reserved</p>
-    <div class="social">
-      <a href="https://www.instagram.com/unlac.health" target="_blank">Instagram</a> |
-      <a href="https://youtube.com/@unlachealth" target="_blank">YouTube</a>
-    </div>
-  </footer>
-
-  <script src="script.js"></script>
-</body>
-</html>
+    <!-- ABOUT -->
+    <section id="about" class="about">
+        <h2>About Unlac Health</h2>
+        <p>
+            Unlac Health is built with one mission — to help individuals heal naturally through food,
+            lifestyle changes, and scientific nutrition.  
+            <br><br>
+            I am passionate about reversing lifestyle disorders including PCOD, Thyroid
