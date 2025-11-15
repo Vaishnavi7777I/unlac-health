@@ -1,68 +1,88 @@
-// Smooth scrolling for in-page links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault();
-    document.querySelector(this.getAttribute('href')).scrollIntoView({
-      behavior: 'smooth'
-    });
-  });
-});
+<script type="module">
+// ---------------- FIREBASE SETUP ----------------
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+import { getFirestore, collection, addDoc, getDocs, serverTimestamp } 
+from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
-// Simple fade-in animation when scrolling
-const sections = document.querySelectorAll('.section');
-const fadeInOnScroll = () => {
-  const triggerBottom = window.innerHeight * 0.85;
-  sections.forEach(section => {
-    const sectionTop = section.getBoundingClientRect().top;
-    if (sectionTop < triggerBottom) {
-      section.classList.add('visible');
-    }
-  });
+// Your Firebase Config
+const firebaseConfig = {
+  apiKey: "AIzaSyAIeuTXkhi6aIgOPUY2QdhVxDR1Un4C8oQ",
+  authDomain: "unlac-health.firebaseapp.com",
+  projectId: "unlac-health",
+  storageBucket: "unlac-health.firebasestorage.app",
+  messagingSenderId: "604002765264",
+  appId: "1:604002765264:web:1256e09260bf2d4a0951d5"
 };
 
-window.addEventListener('scroll', fadeInOnScroll);
-fadeInOnScroll(); // Trigger on load
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
 
-console.log("Unlac Health site loaded successfully.");
+// ---------------- STAR RATING ----------------
+let selectedRating = 5;
 
-/* ============================
-   TESTIMONIAL / REVIEW SLIDER
-   ============================ */
+document.getElementById("starRating").innerHTML = 
+    [...Array(5).keys()].map(i => `<span data-star="${i+1}">★</span>`).join("");
 
-const reviews = [
-  {
-    text: `"Unlac Health completely changed my eating habits. I feel lighter and more energetic!"`,
-    author: "— Priya"
-  },
-  {
-    text: `"The diet plans are simple and effective. I could see results in just 2 weeks!"`,
-    author: "— Anisha"
-  },
-  {
-    text: `"Best nutrition guidance I have ever received. Highly recommended!"`,
-    author: "— Kavita"
-  }
-];
+document.querySelectorAll("#starRating span").forEach(star => {
+    star.addEventListener("click", () => {
+        selectedRating = star.dataset.star;
+        highlightStars(selectedRating);
+    });
+});
 
-let currentReview = 0;
+function highlightStars(rating) {
+    document.querySelectorAll("#starRating span").forEach(star => {
+        star.style.color = star.dataset.star <= rating ? "gold" : "lightgray";
+    });
+}
+highlightStars(5);
 
-function showReview() {
-  const reviewText = document.querySelector(".review-text");
-  const reviewAuthor = document.querySelector(".review-author");
+// ---------------- SUBMIT REVIEW ----------------
+document.getElementById("reviewForm").addEventListener("submit", async (e) => {
+    e.preventDefault();
 
-  reviewText.textContent = reviews[currentReview].text;
-  reviewAuthor.textContent = reviews[currentReview].author;
+    const name = document.getElementById("reviewerName").value;
+    const review = document.getElementById("reviewText").value;
+
+    try {
+        await addDoc(collection(db, "reviews"), {
+            name,
+            review,
+            rating: selectedRating,
+            createdAt: serverTimestamp()
+        });
+
+        alert("Review submitted!");
+        document.getElementById("reviewForm").reset();
+        selectedRating = 5;
+        highlightStars(5);
+
+        loadReviews(); // reload reviews
+    } 
+    catch (error) {
+        console.error("Error adding review: ", error);
+    }
+});
+
+// ---------------- LOAD REVIEWS ----------------
+async function loadReviews() {
+    const querySnapshot = await getDocs(collection(db, "reviews"));
+    const reviewList = document.getElementById("review-list");
+    reviewList.innerHTML = "";
+
+    querySnapshot.forEach((doc) => {
+        const data = doc.data();
+
+        reviewList.innerHTML += `
+            <div class="review-card">
+                <div class="stars">${"★".repeat(data.rating)}</div>
+                <p>${data.review}</p>
+                <div class="review-name">— ${data.name}</div>
+            </div>
+        `;
+    });
 }
 
-function nextReview() {
-  currentReview = (currentReview + 1) % reviews.length;
-  showReview();
-}
+loadReviews();
 
-function prevReview() {
-  currentReview = (currentReview - 1 + reviews.length) % reviews.length;
-  showReview();
-}
-
-// Load first review automatically
-showReview();
+</script>
