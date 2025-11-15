@@ -1,18 +1,64 @@
-<script type="module">
-// ---------------- FIREBASE SETUP ----------------
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-import { getFirestore, collection, addDoc, getDocs, serverTimestamp } 
-from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+let reviews = [
+    { name: "Aarohi", rating: 5, text: "Amazing progress in 4 weeks!" },
+    { name: "Riya", rating: 5, text: "PCOD symptoms reduced naturally!" }
+];
 
-// Your Firebase Config
-const firebaseConfig = {
-  apiKey: "AIzaSyAIeuTXkhi6aIgOPUY2QdhVxDR1Un4C8oQ",
-  authDomain: "unlac-health.firebaseapp.com",
-  projectId: "unlac-health",
-  storageBucket: "unlac-health.firebasestorage.app",
-  messagingSenderId: "604002765264",
-  appId: "1:604002765264:web:1256e09260bf2d4a0951d5"
-};
+// Load saved reviews
+if (localStorage.getItem("unlacReviews")) {
+    reviews = JSON.parse(localStorage.getItem("unlacReviews"));
+}
 
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
+let index = 0;
+
+// Show review
+function displayReview() {
+    const r = reviews[index];
+
+    document.getElementById("reviewDisplay").innerHTML = `
+        <h3>${"★".repeat(r.rating)}</h3>
+        <p>${r.text}</p>
+        <strong>- ${r.name}</strong>
+    `;
+}
+displayReview();
+
+// Arrows
+function nextReview() {
+    index = (index + 1) % reviews.length;
+    displayReview();
+}
+function prevReview() {
+    index = (index - 1 + reviews.length) % reviews.length;
+    displayReview();
+}
+
+// Star rating selector
+let selectedRating = 5;
+
+document.getElementById("starSelect").addEventListener("click", () => {
+    selectedRating = selectedRating === 5 ? 4 : selectedRating - 1;
+    if (selectedRating < 1) selectedRating = 5;
+    document.getElementById("starSelect").textContent = "★★★★★".substring(0, selectedRating);
+});
+
+// Submit review
+document.getElementById("reviewForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const name = document.getElementById("reviewerName").value;
+    const text = document.getElementById("reviewText").value;
+
+    reviews.push({
+        name,
+        text,
+        rating: selectedRating
+    });
+
+    localStorage.setItem("unlacReviews", JSON.stringify(reviews));
+
+    index = reviews.length - 1;
+    displayReview();
+
+    this.reset();
+    alert("Review submitted!");
+});
