@@ -125,62 +125,6 @@ button.btn {
   color: #666;
 }
 
-/* Reviews Section */
-#reviews {
-  padding: 60px 20px;
-  text-align: center;
-  background: #fff7f7;
-}
-
-#reviews h2 {
-  color: #d62828;
-  font-size: 32px;
-  margin-bottom: 30px;
-}
-
-.review-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 15px;
-}
-
-.review-box {
-  max-width: 450px;
-  background: white;
-  padding: 30px;
-  border-radius: 20px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-  transition: opacity 0.3s ease-in-out;
-}
-
-.review-text {
-  font-size: 18px;
-  color: #444;
-  margin-bottom: 10px;
-}
-
-.review-author {
-  font-size: 16px;
-  color: #d62828;
-  font-weight: bold;
-}
-
-.arrow {
-  background: #d62828;
-  color: white;
-  border: none;
-  padding: 12px 18px;
-  cursor: pointer;
-  border-radius: 50%;
-  font-size: 20px;
-  transition: 0.2s;
-}
-
-.arrow:hover {
-  background: #b81f1f;
-}
-
 /* ============================
    WRITE A REVIEW FORM (⭐)
    ============================ */
