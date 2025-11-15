@@ -1,13 +1,15 @@
+/* RESET */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: #fff;
+    background: #ffffff;
     color: #333;
 }
 
+/* HEADER */
 header {
-    background: #ffdddd;
-    padding: 15px;
+    background: #ffdce0;
+    padding: 15px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -18,101 +20,147 @@ nav a {
     text-decoration: none;
     color: #b30000;
     font-weight: bold;
+    font-size: 14px;
 }
 
-section {
-    padding: 50px 20px;
-}
-
-/* HOME */
-.home {
-    background: #ffecec;
+/* GENERAL SECTION */
+.section {
+    max-width: 900px;
+    margin: auto;
+    padding: 60px 20px;
     text-align: center;
-    padding: 80px 20px;
+}
+
+/* HERO SECTION */
+.hero {
+    background: url("https://images.unsplash.com/photo-1546069901-ba9599a7e63c") center/cover;
+    height: 70vh;
+    position: relative;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(255, 204, 213, 0.65);
+    backdrop-filter: blur(3px);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    padding-top: 180px;
+    color: #b30000;
 }
 
 /* ABOUT */
-.about {
-    background: #fff;
+.about-text {
+    line-height: 1.7;
+    font-size: 16px;
 }
 
 /* SERVICES */
-.service-list {
+.service-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: 15px;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
 }
 
 .service-card {
-    background: #ffe6e6;
+    background: #ffe6ea;
     padding: 20px;
     border-radius: 8px;
-    text-align: center;
+    font-weight: bold;
 }
 
 /* REVIEWS */
-.reviews {
-    background: #fff5f5;
-    text-align: center;
+.reviews-section {
+    background: #fff7f9;
 }
 
 .review-slider {
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    margin-bottom: 25px;
 }
 
 .review-card {
     width: 70%;
-    min-height: 120px;
     padding: 20px;
+    min-height: 130px;
     background: white;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.1);
 }
 
 .arrow {
-    font-size: 30px;
     background: none;
     border: none;
+    font-size: 30px;
     cursor: pointer;
+    color: #b30000;
 }
 
-/* STAR PICKER */
+/* STAR SELECT */
 .star-select {
-    font-size: 25px;
+    font-size: 28px;
     color: gold;
     cursor: pointer;
+    margin-bottom: 10px;
     letter-spacing: 3px;
+}
+
+/* REVIEW FORM */
+.review-form input,
+.review-form textarea {
+    width: 90%;
+    margin: 10px auto;
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    display: block;
+}
+
+.review-form button {
+    background: #ff4d6d;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
 }
 
 /* CONTACT */
 .contact-form {
-    display: flex;
-    flex-direction: column;
-    max-width: 450px;
+    max-width: 500px;
     margin: auto;
 }
 
 .contact-form input,
 .contact-form textarea {
-    margin: 10px 0;
+    width: 100%;
     padding: 12px;
+    margin: 8px 0;
     border-radius: 6px;
     border: 1px solid #ccc;
 }
 
 button {
-    padding: 10px;
-    background: #ff4d4d;
-    border: none;
+    background: #ff4d6d;
     color: white;
-    cursor: pointer;
+    padding: 12px;
     border-radius: 6px;
+    border: none;
+    cursor: pointer;
 }
 
+/* SOCIAL */
 .social a {
     margin: 10px;
-    color: #b30000;
     font-weight: bold;
+    color: #b30000;
+    text-decoration: none;
 }
