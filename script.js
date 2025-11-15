@@ -24,3 +24,45 @@ window.addEventListener('scroll', fadeInOnScroll);
 fadeInOnScroll(); // Trigger on load
 
 console.log("Unlac Health site loaded successfully.");
+
+/* ============================
+   TESTIMONIAL / REVIEW SLIDER
+   ============================ */
+
+const reviews = [
+  {
+    text: `"Unlac Health completely changed my eating habits. I feel lighter and more energetic!"`,
+    author: "— Priya"
+  },
+  {
+    text: `"The diet plans are simple and effective. I could see results in just 2 weeks!"`,
+    author: "— Anisha"
+  },
+  {
+    text: `"Best nutrition guidance I have ever received. Highly recommended!"`,
+    author: "— Kavita"
+  }
+];
+
+let currentReview = 0;
+
+function showReview() {
+  const reviewText = document.querySelector(".review-text");
+  const reviewAuthor = document.querySelector(".review-author");
+
+  reviewText.textContent = reviews[currentReview].text;
+  reviewAuthor.textContent = reviews[currentReview].author;
+}
+
+function nextReview() {
+  currentReview = (currentReview + 1) % reviews.length;
+  showReview();
+}
+
+function prevReview() {
+  currentReview = (currentReview - 1 + reviews.length) % reviews.length;
+  showReview();
+}
+
+// Load first review automatically
+showReview();
