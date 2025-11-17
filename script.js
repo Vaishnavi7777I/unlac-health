@@ -14,20 +14,18 @@ let index = 0;
 function showReview() {
     const r = reviews[index];
     const reviewBox = document.getElementById("reviewBox");
-    if (reviewBox) {
-        reviewBox.innerHTML = `
-            <h3>${r.name}</h3>
-            <p>${r.rating}</p>
-            <p>${r.message}</p>
-        `;
-    }
+
+    reviewBox.innerHTML = `
+        <h3>${r.name}</h3>
+        <p>${r.rating}</p>
+        <p>${r.message}</p>
+    `;
 }
 
-// Initialize first review
 showReview();
 
 // =======================
-// Navigate Reviews
+// Navigate Buttons
 // =======================
 function nextReview() {
     index = (index + 1) % reviews.length;
@@ -42,30 +40,18 @@ function prevReview() {
 // =======================
 // Add New Review
 // =======================
-const reviewForm = document.getElementById("reviewForm");
-if (reviewForm) {
-    reviewForm.addEventListener("submit", function(e) {
-        e.preventDefault();
+document.getElementById("reviewForm").addEventListener("submit", function(e){
+    e.preventDefault();
 
-        const name = document.getElementById("name").value.trim();
-        const rating = document.getElementById("rating").value;
-        const message = document.getElementById("message").value.trim();
+    const name = document.getElementById("name").value.trim();
+    const rating = document.getElementById("rating").value;
+    const message = document.getElementById("message").value.trim();
 
-        if (name && rating && message) {
-            // Add review to array
-            reviews.push({ name, rating, message });
-
-            // Show the new review immediately
-            index = reviews.length - 1;
-            showReview();
-
-            // Reset the form
-            this.reset();
-
-            // Optional: confirmation alert
-            alert("Review added successfully!");
-        } else {
-            alert("Please fill in all fields before submitting.");
-        }
-    });
-}
+    if(name && rating && message){
+        reviews.push({name, rating, message});
+        index = reviews.length - 1;
+        showReview();
+        this.reset();
+        alert("Review added successfully!");
+    }
+});
