@@ -1,155 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Unlac Health</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unlac Health</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<header class="site-header">
-    <img src="logo.png" class="logo" alt="Unlac Health Logo">
+    <!-- ================= HERO ================= -->
+    <header class="hero">
+        <img src="logo.png" class="hero-logo" alt="Unlac Health Logo">
 
-    <h1 class="brand-title">Unlac Health</h1>
-    <p class="tagline">Healing through Food · Science-backed Nutrition</p>
+        <nav class="nav">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#reviews">Reviews</a>
+            <a href="#contact">Contact</a>
+        </nav>
 
-    <nav class="main-nav">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#reviews">Reviews</a>
-        <a href="#contact">Contact</a>
-    </nav>
-</header>
-
-
-<!-- HERO with blurred bg -->
-<section id="home" class="hero">
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-        <h2>Your journey to better health starts here</h2>
-        <p>Personalised nutrition for PCOD, Diabetes, Thyroid, Weight Loss & more.</p>
-    </div>
-</section>
-
-
-<!-- ABOUT -->
-<section id="about" class="section about fade-in">
-    <h2>About Unlac Health</h2>
-    <p>
-        At Unlac Health, we believe in the power of food to heal. Our approach is science-based,
-        gentle and personalised—focusing on metabolic balance, hormonal support and sustainable 
-        routines that fit your life.
-    </p>
-    <p>
-        We help clients manage PCOD/PCOS, diabetes, thyroid issues, weight concerns, gut health
-        and other lifestyle conditions with evidence-backed nutrition strategies.
-    </p>
-</section>
-
-
-<!-- SERVICES -->
-<section id="services" class="services-section">
-    <h2 class="section-title">Our Services</h2>
-
-    <div class="services-grid">
-
-        <div class="service-card">
-            <img src="assets/services/weightloss.jpg" alt="Weight Loss Programs">
-            <h3>Weight Loss Programs</h3>
-            <p>Sustainable, personalised fat-loss plans.</p>
+        <div class="hero-text">
+            <h1>Unlac Health</h1>
+            <p>Your Path to Healthier Living</p>
         </div>
+    </header>
 
-        <div class="service-card">
-            <img src="assets/services/pcod.jpg" alt="PCOD / PCOS">
-            <h3>PCOD / PCOS</h3>
-            <p>Hormone-balancing nutrition and lifestyle plans.</p>
-        </div>
 
-        <div class="service-card">
-            <img src="assets/services/diabetes.jpg" alt="Diabetes Care">
-            <h3>Diabetes Care</h3>
-            <p>Blood sugar support and reversal strategies.</p>
-        </div>
+    <!-- ================= ABOUT ================= -->
+    <section id="about" class="about-section">
+        <h2>About Unlac Health</h2>
+        <p>
+            Welcome to Unlac Health — a space dedicated to helping individuals achieve 
+            sustainable, long-term wellness. Our approach focuses on personalised nutrition, 
+            lifestyle modification, and root-cause healing.  
+            <br><br>
+            Whether you're dealing with PCOD, thyroid challenges, diabetes, weight gain, 
+            or gut imbalances — our mission is to guide you toward a healthier and more confident 
+            version of yourself.
+        </p>
+    </section>
 
-        <div class="service-card">
-            <img src="assets/services/thyroid.jpg" alt="Thyroid Health">
-            <h3>Thyroid Health</h3>
-            <p>Nutrition guidance for optimal thyroid function.</p>
-        </div>
 
-        <div class="service-card">
-            <img src="assets/services/gut.jpg" alt="Gut Health">
-            <h3>Gut Health</h3>
-            <p>Holistic digestive wellness and lifestyle support.</p>
-        </div>
+    <!-- ================= SERVICES ================= -->
+    <section id="services" class="services-section">
+        <h2>Services</h2>
 
-        <div class="service-card">
-            <img src="assets/services/child.jpg" alt="Child Nutrition">
-            <h3>Child Nutrition</h3>
-            <p>Healthy growth and balanced eating for kids.</p>
-        </div>
+        <div class="services-grid">
 
-    </div>
-</section>
-
-<!-- REVIEWS -->
-<section id="reviews" class="section reviews fade-in">
-    <h2>Client Reviews</h2>
-
-    <div class="review-area">
-        <button class="arrow" id="prevBtn">&#10094;</button>
-
-        <div id="reviewDisplay" class="review-display"></div>
-
-        <button class="arrow" id="nextBtn">&#10095;</button>
-    </div>
-
-    <div class="submit-review">
-        <h3>Write a Review</h3>
-
-        <form id="reviewForm" class="review-form">
-            <input id="nameInput" type="text" placeholder="Your name" required>
-            <textarea id="reviewText" rows="3" placeholder="Your review..." required></textarea>
-
-            <div class="star-picker" id="starPicker">
-                <button type="button" class="star" data-value="1">☆</button>
-                <button type="button" class="star" data-value="2">☆</button>
-                <button type="button" class="star" data-value="3">☆</button>
-                <button type="button" class="star" data-value="4">☆</button>
-                <button type="button" class="star" data-value="5">☆</button>
+            <div class="service-card">
+                <img src="assets/weightloss.jpg" alt="Weight Loss">
+                <h3>Weight Loss Programs</h3>
+                <p>Personalised, sustainable fat-loss plans.</p>
             </div>
 
-            <button type="submit" class="btn">Submit</button>
-            <p id="reviewNotice"></p>
-        </form>
-    </div>
-</section>
-
-
-<!-- CONTACT -->
-<section id="contact" class="section contact fade-in">
-    <h2>Contact</h2>
-
-    <form action="https://formspree.io/f/xwpapnev" method="POST" class="contact-form">
-        <input type="text" name="name" placeholder="Your name" required>
-        <input type="email" name="_replyto" placeholder="Your email" required>
-        <textarea name="message" rows="5" placeholder="Your message" required></textarea>
-        <button class="btn" type="submit">Send Message</button>
-    </form>
-
-    <div class="social-links">
-        <a href="https://www.instagram.com/unlac.health" target="_blank">Instagram</a>
-        <a href="https://youtube.com/@unlachealth" target="_blank">YouTube</a>
-    </div>
-</section>
-
-
-<footer class="site-footer">
-    <p>© <span id="year"></span> Unlac Health. All rights reserved.</p>
-</footer>
-
-<script src="script.js"></script>
-</body>
-</html>
+            <div class="service-card">
+                <img src="assets/pcod.jpg" alt="PCOD / PCOS">
+                <h3>PCOD / PCOS</h3>
+                <p>Hormone balancing & lifestyle
