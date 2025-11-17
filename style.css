@@ -8,8 +8,7 @@ body {
 /* ================= HERO ================= */
 .hero {
     background: url("assets/saladbg.jpg") center/cover no-repeat;
-    filter: brightness(100%); /* remove darkening */
-    padding: 60px 20px;
+    padding: 80px 20px;
     text-align: center;
     position: relative;
 }
@@ -20,19 +19,25 @@ body {
     margin: 0 auto 10px;
 }
 
-.hero-text h1,
+.hero-text h1 {
+    font-size: 48px;
+    margin-top: 10px;
+    color: #d61c22;
+}
+
 .hero-text p {
-    color: #2C3E50; /* dark text for contrast */
+    font-size: 20px;
+    color: #2C3E50;
 }
 
 .nav a {
     margin: 0 12px;
-    color: #2C3E50; /* dark nav links */
+    color: #2C3E50;
     font-weight: bold;
     text-decoration: none;
+    font-size: 18px;
 }
 
-/* Add hover effect */
 .nav a:hover {
     color: #d61c22;
 }
