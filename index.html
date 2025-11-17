@@ -45,7 +45,6 @@
         <h2>Services</h2>
 
         <div class="services-grid">
-
             <div class="service-card">
                 <img src="assets/weightloss.jpg" alt="Weight Loss">
                 <h3>Weight Loss Programs</h3>
@@ -69,40 +68,46 @@
                 <h3>Gut Health</h3>
                 <p>Comprehensive strategies to improve digestion and gut microbiome.</p>
             </div>
-
         </div>
     </section>
 
     <!-- ================= REVIEWS ================= -->
     <section id="reviews" class="reviews-section">
         <h2>Reviews</h2>
-        <div class="reviews-grid">
 
-            <div class="review-card">
-                <p>"Unlac Health changed my life! My energy levels and overall wellness have skyrocketed."</p>
-                <h4>- Priya S.</h4>
-            </div>
+        <!-- Review Display Box -->
+        <div id="reviewBox" class="review-box"></div>
 
-            <div class="review-card">
-                <p>"The personalized approach really helped me manage my PCOD symptoms effectively."</p>
-                <h4>- Anjali K.</h4>
-            </div>
-
-            <div class="review-card">
-                <p>"I highly recommend Unlac Health for anyone looking to improve their lifestyle and health."</p>
-                <h4>- Rohit M.</h4>
-            </div>
-
+        <!-- Navigation Buttons -->
+        <div class="review-navigation">
+            <button onclick="prevReview()">Previous</button>
+            <button onclick="nextReview()">Next</button>
         </div>
+
+        <!-- Add New Review Form -->
+        <h3>Add Your Review</h3>
+        <form id="reviewForm">
+            <input type="text" id="name" placeholder="Your Name" required>
+            <select id="rating" required>
+                <option value="">Select Rating</option>
+                <option value="⭐">⭐</option>
+                <option value="⭐⭐">⭐⭐</option>
+                <option value="⭐⭐⭐">⭐⭐⭐</option>
+                <option value="⭐⭐⭐⭐">⭐⭐⭐⭐</option>
+                <option value="⭐⭐⭐⭐⭐">⭐⭐⭐⭐⭐</option>
+            </select>
+            <textarea id="message" placeholder="Your Review" rows="3" required></textarea>
+            <button type="submit">Submit Review</button>
+        </form>
     </section>
 
     <!-- ================= CONTACT ================= -->
     <section id="contact" class="contact-section">
         <h2>Contact Us</h2>
         <form action="#" method="post" class="contact-form">
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+            <input type="text" name="contactName" placeholder="Your Name" required>
+            <input type="email" name="contactEmail" placeholder="Your Email" required>
+            <textarea name="contactMessage" rows="5" placeholder="Your Message" required></textarea>
             <button type="submit">Send Message</button>
         </form>
 
@@ -120,6 +125,73 @@
             <a href="#">Facebook</a> | <a href="#">Instagram</a> | <a href="#">LinkedIn</a>
         </div>
     </footer>
+
+    <!-- ================= SCRIPT ================= -->
+    <script>
+        // Reviews stored locally
+        let reviews = [
+            { name: "Riya", rating: "⭐⭐⭐⭐⭐", message: "Amazing guidance and real results!" },
+            { name: "Aarav", rating: "⭐⭐⭐⭐", message: "Very helpful and supportive experience." }
+        ];
+
+        let index = 0;
+
+        // Show Current Review
+        function showReview() {
+            const r = reviews[index];
+            const reviewBox = document.getElementById("reviewBox");
+            if (reviewBox) {
+                reviewBox.innerHTML = `
+                    <h3>${r.name}</h3>
+                    <p>${r.rating}</p>
+                    <p>${r.message}</p>
+                `;
+            }
+        }
+
+        // Initialize first review
+        showReview();
+
+        // Navigate Reviews
+        function nextReview() {
+            index = (index + 1) % reviews.length;
+            showReview();
+        }
+
+        function prevReview() {
+            index = (index - 1 + reviews.length) % reviews.length;
+            showReview();
+        }
+
+        // Add New Review
+        const reviewForm = document.getElementById("reviewForm");
+        if (reviewForm) {
+            reviewForm.addEventListener("submit", function(e) {
+                e.preventDefault();
+
+                const name = document.getElementById("name").value.trim();
+                const rating = document.getElementById("rating").value;
+                const message = document.getElementById("message").value.trim();
+
+                if (name && rating && message) {
+                    // Add review to array
+                    reviews.push({ name, rating, message });
+
+                    // Show the new review immediately
+                    index = reviews.length - 1;
+                    showReview();
+
+                    // Reset the form
+                    this.reset();
+
+                    // Optional: confirmation alert
+                    alert("Review added successfully!");
+                } else {
+                    alert("Please fill in all fields before submitting.");
+                }
+            });
+        }
+    </script>
 
 </body>
 </html>
