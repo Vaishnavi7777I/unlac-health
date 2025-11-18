@@ -1,129 +1,151 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Unlac Health</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Unlac Health</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- ================= HERO ================= -->
-    <header class="hero" id="home">
-        <img src="logo.png" class="hero-logo" alt="Unlac Health Logo">
+  <!-- Header: centered logo + nav -->
+  <header class="site-header">
+    <img src="logo.png" alt="Unlac Health logo" class="site-logo" />
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#stats">Stats</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-        <nav class="nav">
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#services">Services</a>
-            <a href="#reviews">Reviews</a>
-            <a href="#contact">Contact</a>
-        </nav>
+  <!-- HERO (soft pink + blurred food image behind) -->
+  <section id="home" class="hero" aria-labelledby="hero-heading">
+    <div class="hero-bg" aria-hidden="true"></div>
 
-        <div class="hero-text">
-            <h1>Unlac Health</h1>
-            <p>Your Path to Healthier Living</p>
-        </div>
-    </header>
+    <div class="hero-inner">
+      <h1 id="hero-heading" class="hero-title">Unlac Health</h1>
+      <p class="hero-sub">Practical, personalised nutrition for sustainable health.</p>
+      <a class="btn cta" href="#contact">Get in touch</a>
+    </div>
+  </section>
 
-    <!-- ================= ABOUT ================= -->
-    <section id="about" class="about-section">
-        <h2>About Unlac Health</h2>
-        <p>
-            Welcome to Unlac Health — a space dedicated to helping individuals achieve 
-            sustainable, long-term wellness. Our approach focuses on personalised nutrition, 
-            lifestyle modification, and root-cause healing.
-            <br><br>
-            Whether you're dealing with PCOD, thyroid challenges, diabetes, weight gain, 
-            or gut imbalances — our mission is to guide you toward a healthier and more confident 
-            version of yourself.
-        </p>
-    </section>
+  <!-- ABOUT -->
+  <section id="about" class="section about">
+    <h2>About Unlac Health</h2>
+    <p>
+      Unlac Health helps real people build healthier lives using simple, evidence-based nutrition and realistic behaviour changes.
+      Our focus is metabolic health, hormonal balance and long-term habit change — not quick fixes. We design personalised plans for
+      PCOD/PCOS, thyroid support, diabetes management & reversal, gut health, weight management and child nutrition.
+    </p>
+  </section>
 
-    <!-- ================= SERVICES ================= -->
-    <section id="services" class="services-section">
-        <h2>Services</h2>
+  <!-- SERVICES (small image above name) -->
+  <section id="services" class="section services">
+    <h2>Services</h2>
 
-        <div class="services-grid">
-            <div class="service-card">
-                <img src="assets/weightloss.jpg" alt="Weight Loss">
-                <h3>Weight Loss Programs</h3>
-                <p>Personalised, sustainable fat-loss plans.</p>
-            </div>
+    <div class="services-grid" role="list">
+      <article class="service-card" role="listitem">
+        <img class="service-img" src="assets/weightloss.jpg" alt="Weight loss program">
+        <h3>Weight Loss Programs</h3>
+        <p>Personalised, sustainable fat-loss plans that fit your life.</p>
+      </article>
 
-            <div class="service-card">
-                <img src="assets/pcod.jpg" alt="PCOD / PCOS">
-                <h3>PCOD / PCOS</h3>
-                <p>Hormone balancing & lifestyle guidance for PCOD/PCOS management.</p>
-            </div>
+      <article class="service-card" role="listitem">
+        <img class="service-img" src="assets/pcod.jpg" alt="PCOD and PCOS nutrition">
+        <h3>PCOD / PCOS</h3>
+        <p>Hormone-balancing nutrition and lifestyle support.</p>
+      </article>
 
-            <div class="service-card">
-                <img src="assets/diabetes.jpg" alt="Diabetes Care">
-                <h3>Diabetes Care</h3>
-                <p>Custom nutrition & lifestyle plans to manage diabetes effectively.</p>
-            </div>
+      <article class="service-card" role="listitem">
+        <img class="service-img" src="assets/diabetes.jpg" alt="Diabetes care and reversal">
+        <h3>Diabetes Care</h3>
+        <p>Food-first strategies to support blood sugar and reduce medication dependence where possible.</p>
+      </article>
 
-            <div class="service-card">
-                <img src="assets/guthealth.jpg" alt="Gut Health">
-                <h3>Gut Health</h3>
-                <p>Comprehensive strategies to improve digestion and gut microbiome.</p>
-            </div>
-        </div>
-    </section>
+      <article class="service-card" role="listitem">
+        <img class="service-img" src="assets/thyroid.jpg" alt="Thyroid nutrition">
+        <h3>Thyroid Health</h3>
+        <p>Nutrition to support thyroid function and healthy metabolism.</p>
+      </article>
 
-    <!-- ================= REVIEWS ================= -->
-    <section id="reviews" class="reviews-section">
-        <h2>Reviews</h2>
+      <article class="service-card" role="listitem">
+        <img class="service-img" src="assets/guthealth.jpg" alt="Gut health">
+        <h3>Gut Health</h3>
+        <p>Digestive support and microbiome-friendly plans.</p>
+      </article>
 
-        <div id="reviewBox" class="review-box"></div>
+      <article class="service-card" role="listitem">
+        <img class="service-img" src="assets/childnutrition.jpg" alt="Child nutrition">
+        <h3>Child Nutrition</h3>
+        <p>Age-appropriate meal plans and healthy habit coaching for families.</p>
+      </article>
+    </div>
+  </section>
 
-        <div class="review-navigation">
-            <button onclick="prevReview()">Previous</button>
-            <button onclick="nextReview()">Next</button>
-        </div>
+  <!-- STATS -->
+  <section id="stats" class="stats-section" aria-hidden="false">
+    <div class="stat"><div class="stat-number">3+</div><div class="stat-label">Years Experience</div></div>
+    <div class="divider" aria-hidden="true"></div>
+    <div class="stat"><div class="stat-number">99%</div><div class="stat-label">Success Rate</div></div>
+    <div class="divider" aria-hidden="true"></div>
+    <div class="stat"><div class="stat-number">97%</div><div class="stat-label">Positive Feedback</div></div>
+    <div class="divider" aria-hidden="true"></div>
+    <div class="stat"><div class="stat-number">5k+</div><div class="stat-label">Happy Clients</div></div>
+  </section>
 
-        <h3>Add Your Review</h3>
-        <form id="reviewForm">
-            <input type="text" id="name" placeholder="Your Name" required>
-            <select id="rating" required>
-                <option value="">Select Rating</option>
-                <option value="⭐">⭐</option>
-                <option value="⭐⭐">⭐⭐</option>
-                <option value="⭐⭐⭐">⭐⭐⭐</option>
-                <option value="⭐⭐⭐⭐">⭐⭐⭐⭐</option>
-                <option value="⭐⭐⭐⭐⭐">⭐⭐⭐⭐⭐</option>
-            </select>
-            <textarea id="message" placeholder="Your Review" rows="3" required></textarea>
-            <button type="submit">Submit Review</button>
-        </form>
-    </section>
+  <!-- REVIEWS (2-3 short unique reviews, arrow-controlled) -->
+  <section id="reviews" class="section reviews">
+    <h2>What people say</h2>
 
-    <!-- ================= CONTACT ================= -->
-    <section id="contact" class="contact-section">
-        <h2>Contact Us</h2>
-        <form action="#" method="post" class="contact-form">
-            <input type="text" name="contactName" placeholder="Your Name" required>
-            <input type="email" name="contactEmail" placeholder="Your Email" required>
-            <textarea name="contactMessage" rows="5" placeholder="Your Message" required></textarea>
-            <button type="submit">Send Message</button>
-        </form>
+    <div class="review-row">
+      <button class="arrow" id="prevReview" aria-label="Previous review">&#10094;</button>
 
-        <div class="contact-info">
-            <p>Email: info@unlachealth.com</p>
-            <p>Phone: +91 12345 67890</p>
-        </div>
-    </section>
+      <div class="review-frame" id="reviewFrame" aria-live="polite">
+        <!-- review injected by JS -->
+      </div>
 
-    <!-- ================= FOOTER ================= -->
-    <footer class="footer">
-        <img src="logo.png" alt="Unlac Health Logo" class="footer-logo">
-        <p>&copy; 2025 Unlac Health. All Rights Reserved.</p>
-        <div class="social-links">
-            <a href="#">Facebook</a> | <a href="#">Instagram</a> | <a href="#">LinkedIn</a>
-        </div>
-    </footer>
+      <button class="arrow" id="nextReview" aria-label="Next review">&#10095;</button>
+    </div>
 
-    <script src="script.js"></script>
+    <form id="reviewForm" class="review-form" aria-label="Submit review">
+      <input id="r-name" type="text" placeholder="Your name" required>
+      <div class="rating" role="radiogroup" aria-label="Star rating">
+        <button type="button" class="star" data-value="1">☆</button>
+        <button type="button" class="star" data-value="2">☆</button>
+        <button type="button" class="star" data-value="3">☆</button>
+        <button type="button" class="star" data-value="4">☆</button>
+        <button type="button" class="star" data-value="5">☆</button>
+      </div>
+      <textarea id="r-text" rows="3" placeholder="Write your review" required></textarea>
+      <button type="submit" class="btn">Submit Review</button>
+      <p id="r-notice" class="muted"></p>
+    </form>
+  </section>
 
+  <!-- CONTACT -->
+  <section id="contact" class="section contact">
+    <h2>Contact</h2>
+
+    <form class="contact-form" action="https://formspree.io/f/xwpapnev" method="POST">
+      <input name="name" type="text" placeholder="Your name" required>
+      <input name="_replyto" type="email" placeholder="Your email" required>
+      <textarea name="message" rows="4" placeholder="Message" required></textarea>
+      <button class="btn" type="submit">Send Message</button>
+    </form>
+
+    <div class="socials">
+      <a href="https://www.instagram.com/unlac.health" target="_blank" rel="noopener">Instagram</a> •
+      <a href="https://youtube.com/@unlachealth" target="_blank" rel="noopener">YouTube</a>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Unlac Health</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
